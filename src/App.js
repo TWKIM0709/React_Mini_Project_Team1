@@ -1,5 +1,5 @@
 import './App.css';
-import { Link, Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes, useNavigate } from 'react-router-dom';
 import Da1 from './Component/Da1';
 import Da2 from './Component/Da2';
 import Jae1 from './Component/Jae1';
@@ -13,6 +13,7 @@ function App() {
     <div className="App">
     {/* 점보트론 */}
       <MainTitle/>
+      
         <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/da1' element={<Da1/>}/>
@@ -42,6 +43,7 @@ function Main(){
     </Container>
   )
 }
+
 function MainTitle(){
   return <div className="jumbotron">
                 <img src='http://newsroom.etomato.com/userfiles/CGV%20X%20%EB%84%A4%EC%9D%B4%EB%B2%84%20%EC%A3%BC%EA%B0%84%20%EB%B0%95%EC%8A%A4%EC%98%A4%ED%94%BC%EC%8A%A4%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%20%EA%B0%80%EB%A1%9C%ED%98%95.jpg' alt='Cheese' className='titleImage'/>
