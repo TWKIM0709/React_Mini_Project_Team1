@@ -8,7 +8,10 @@ import Tae1 from './Component/Tae1';
 import Tae2 from './Component/Tae2';
 import { Col, Container, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap';
 
+import Data from "./data";
+
 function App() {
+  console.log(Data);
   return (
     <div className="App">
     {/* 점보트론 */}
@@ -18,7 +21,7 @@ function App() {
           <Route path='/' element={<Main/>}/>
           <Route path='/da1' element={<Da1/>}/>
           <Route path='/da2' element={<Da2/>}/>
-          <Route path='/jae1' element={<Jae1/>}/>
+          <Route path='/jae1/:id' element={<Jae1 movies={Data}/>}/>
           <Route path='/jae2' element={<Jae2/>}/>
           <Route path='/tae1' element={<Tae1/>}/>
           <Route path='/tae2' element={<Tae2/>}/>
