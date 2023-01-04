@@ -7,6 +7,10 @@ import Jae2 from './Component/Jae2';
 import Tae1 from './Component/Tae1';
 import Tae2 from './Component/Tae2';
 import { Col, Container, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap';
+import Da1Detail from './Component/Da1_detail';
+import Da2Detail from './Component/Da2_detail';
+
+
 
 function App() {
   return (
@@ -16,7 +20,9 @@ function App() {
         <Routes>
           <Route path='/' element={<Main/>}/>
           <Route path='/da1' element={<Da1/>}/>
+          <Route path='/da1_detail' element={<Da1Detail/>}/>
           <Route path='/da2' element={<Da2/>}/>
+          <Route path='/da2_detail' element={<Da2Detail/>}/>
           <Route path='/jae1' element={<Jae1/>}/>
           <Route path='/jae2' element={<Jae2/>}/>
           <Route path='/tae1' element={<Tae1/>}/>
@@ -30,14 +36,16 @@ function Main(){
   return(
     <Container>
       <Row>
-        <Col>
-          <h1 onClick={()=>navigator('/da1')}>Da1</h1>
+    
+         <Da1/>
+         {/* <h1 onClick={()=>navigator('/da1')}>Da1</h1>
           <h1 onClick={()=>navigator('/da2')}>Da2</h1>
           <h1 onClick={()=>navigator('/jae1')}>Jae1</h1>
           <h1 onClick={()=>navigator('/jae2')}>Jae2</h1>
           <h1 onClick={()=>navigator('/tae1')}>Tae1</h1>
-          <h1 onClick={()=>navigator('/tae2')}>Tae2</h1>
-        </Col>
+          <h1 onClick={()=>navigator('/tae2')}>Tae2</h1> */}
+         <Da2/>
+      
       </Row>
     </Container>
   )
@@ -52,5 +60,7 @@ function MainTitle(){
                   <a className="btn btn-primary btn-lg" href="#cheeseMain" role="button">More Cheese</a>
                 </div>
 } //end MainTitle
+
+
 
 export default App;
