@@ -15,7 +15,7 @@ function Jae2(){
             <Routes>
                 <Route path="/" element={
                     <div className="container">
-                        <div className="row">
+                        <div className="row jea-title">
                             {movies.map((item, i)=>{
                                 return (
                                       <Card movies={movies[i]} i={i} key={i}/>
@@ -36,7 +36,7 @@ function Card(props) {
       <div className="col-md-6">
             <img onClick={()=>{ navigate(`/jae1/${props.movies.id}`) }}
                  src={props.movies.image} width="100%" height="100%"/>
-            <h4>{props.movies.title}</h4>
+            <h4 className="jae-title">{props.movies.title}</h4>
       </div>
     )
   }  

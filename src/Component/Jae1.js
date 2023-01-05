@@ -13,8 +13,8 @@ function Jae1({movies}){
 
     return(
         <div className="container">
-            <div className="row">
-                <div className="col-md-6">
+            <div className="row" >
+                <div className="col-md-6" style={{margin:'0 auto'}}>
                     <img src={findId.image} width="100%"/>
                     <h4>{findId.title}</h4>
                     <p>{findId.content}</p>

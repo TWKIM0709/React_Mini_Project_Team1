@@ -10,14 +10,13 @@ import { Col, Container, Nav, Navbar, NavDropdown, Row } from 'react-bootstrap';
 import Da1Detail from './Component/Da1_detail';
 import Da2Detail from './Component/Da2_detail';
 
-
-
 import Data from "./data";
 
 function App() {
   console.log(Data);
   return (
     <div className="App">
+      <NavArea/>
     {/* 점보트론 */}
       <MainTitle/>
       
@@ -39,16 +38,21 @@ function Main(){
   let navigator = useNavigate();
   return(
     <Container>
-      <Row>
-    
+      <Row style={{marginBottom:30}}>
          <Da1/>
+         <Da2/>
+      </Row>
+      <Row style={{marginBottom:50}}>
+         <Jae2/>
+         </Row>
+         <Row style={{marginBottom:30}}>
+         <Tae1/>
          {/* <h1 onClick={()=>navigator('/da1')}>Da1</h1>
           <h1 onClick={()=>navigator('/da2')}>Da2</h1>
           <h1 onClick={()=>navigator('/jae1')}>Jae1</h1>
           <h1 onClick={()=>navigator('/jae2')}>Jae2</h1>
           <h1 onClick={()=>navigator('/tae1')}>Tae1</h1>
           <h1 onClick={()=>navigator('/tae2')}>Tae2</h1> */}
-         <Da2/>
       
       </Row>
     </Container>
@@ -58,14 +62,31 @@ function Main(){
 function MainTitle(){
   return <div className="jumbotron">
                 <img src='http://newsroom.etomato.com/userfiles/CGV%20X%20%EB%84%A4%EC%9D%B4%EB%B2%84%20%EC%A3%BC%EA%B0%84%20%EB%B0%95%EC%8A%A4%EC%98%A4%ED%94%BC%EC%8A%A4%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%20%EA%B0%80%EB%A1%9C%ED%98%95.jpg' alt='Cheese' className='titleImage'/>
-                  <h1 className="display-4">Cheese</h1>
-                  <p className="lead">The nutritional value of cheese varies widely. Cottage cheese may consist of 4% fat and 11% protein while some whey cheeses are 15% fat and 11% protein, and triple-crème cheeses are 36% fat and 7% protein.</p>
+                   <h1 className="display-4">Movie</h1>
+                  {/*<p className="lead">The nutritional value of cheese varies widely. Cottage cheese may consist of 4% fat and 11% protein while some whey cheeses are 15% fat and 11% protein, and triple-crème cheeses are 36% fat and 7% protein.</p>
                   <hr className="my-4"/>
                   <p>A cheeseboard (or cheese course) may be served at the end of a meal before or following dessert, or replacing the last course. </p>
-                  <a className="btn btn-primary btn-lg" href="#cheeseMain" role="button">More Cheese</a>
+                  <a className="btn btn-primary btn-lg" href="#cheeseMain" role="button">More Cheese</a> */}
                 </div>
 } //end MainTitle
 
-
+function NavArea(){
+  let navigate = useNavigate();
+  return <Navbar bg="light" expand="lg">
+  <Container>
+    <Navbar.Brand onClick={()=>{navigate('/')}}>MOVIE</Navbar.Brand>
+    <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Navbar.Collapse id="basic-navbar-nav">
+      <Nav className="me-auto">
+        <Nav.Link onClick={()=>{navigate('/')}}>목록보기</Nav.Link>
+        <Nav.Link onClick={()=>{navigate(-1)}}>뒤로가기</Nav.Link>
+      </Nav>
+    </Navbar.Collapse>
+        <Nav className='ms-auto'>
+          반갑습니다
+        </Nav>
+  </Container>
+</Navbar>
+}// end NavArea
 
 export default App;
